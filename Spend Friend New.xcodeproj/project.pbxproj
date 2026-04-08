@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		793C53F02F871C6A00689A51 /* LinkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 793C53EF2F871C6A00689A51 /* LinkKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		793C53D52F8717F100689A51 /* Spend Friend New.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spend Friend New.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793C53F02F871C6A00689A51 /* LinkKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = "Spend Friend New";
 			packageProductDependencies = (
+				793C53EF2F871C6A00689A51 /* LinkKit */,
 			);
 			productName = "Spend Friend New";
 			productReference = 793C53D52F8717F100689A51 /* Spend Friend New.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 793C53CC2F8717F100689A51;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				793C53EE2F871C6A00689A51 /* XCRemoteSwiftPackageReference "plaid-link-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 793C53D62F8717F100689A51 /* Products */;
 			projectDirPath = "";
@@ -351,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		793C53EE2F871C6A00689A51 /* XCRemoteSwiftPackageReference "plaid-link-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/plaid/plaid-link-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.4.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		793C53EF2F871C6A00689A51 /* LinkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 793C53EE2F871C6A00689A51 /* XCRemoteSwiftPackageReference "plaid-link-ios" */;
+			productName = LinkKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 793C53CD2F8717F100689A51 /* Project object */;
 }
