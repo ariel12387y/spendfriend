@@ -1,9 +1,19 @@
 -- spend_friend_schema.sql
 
+-- 0. Create a public users table for metadata
+CREATE TABLE IF NOT EXISTS public.users (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    apple_id TEXT UNIQUE,
+    email TEXT UNIQUE,
+    full_name TEXT,
+    last_login TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
 -- 1. Create a table to store users' financial API connections securely
 CREATE TABLE IF NOT EXISTS public.financial_connections (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+    user_id UUID REFERENCES public.users(id) ON DELETE CASCADE,
     plaid_access_token TEXT,
     plaid_item_id TEXT UNIQUE,
     alpaca_api_key TEXT,

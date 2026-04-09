@@ -9,10 +9,12 @@ app.use(express.json());
 // Routes
 const plaidRoutes = require('./routes/plaid');
 const alpacaRoutes = require('./routes/alpaca');
+const authRoutes = require('./routes/auth');
 const webhookRoutes = require('./routes/webhooks');
 
 app.use('/api/plaid', plaidRoutes);
 app.use('/api/alpaca', alpacaRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/webhooks', webhookRoutes);
 
 app.get('/health', (req, res) => {
