@@ -67,4 +67,23 @@ router.post('/set_access_token', async (req, res) => {
   }
 });
 
+// Get Investment History from Supabase
+router.get('/history', async (req, res) => {
+    const { userId } = req.query;
+    if (!userId) return res.status(400).json({ error: 'userId is required' });
+
+    try {
+        const { data: history, error } = await supabase
+            .from('automated_investments')
+            .select('*')
+            .eq('user_id', userId)
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        res.json(history);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 module.exports = router;
